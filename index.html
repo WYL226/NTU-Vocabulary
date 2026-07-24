@@ -6,6 +6,8 @@
 
 <meta charset="UTF-8">
 
+<link rel="manifest" href="manifest.json">
+
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
@@ -151,6 +153,28 @@ body{
 </div>
 
 <script src="app.js"></script>
+
+<script>
+
+if("serviceWorker" in navigator){
+
+    navigator.serviceWorker.register("service-worker.js")
+
+    .then(()=>{
+
+        console.log("Service Worker 已註冊");
+
+    })
+
+    .catch(error=>{
+
+        console.log(error);
+
+    });
+
+}
+
+</script>
 
 </body>
 
