@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>NTU Vocabulary</title>
+
+<meta
+name="apple-mobile-web-app-capable"
+content="yes">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta
+name="apple-mobile-web-app-status-bar-style"
+content="default">
+
+<meta
+name="apple-mobile-web-app-title"
+content="NTU VOC">
+
+<meta
+name="theme-color"
+content="#ffffff">
+
+<link
+rel="apple-touch-icon"
+href="icon.png">
+
+<link
+rel="icon"
+href="icon.png">
+
+<style>
+
+body{
+
+    margin:0;
+
+    background:#f5f5f5;
+
+    font-family:Arial;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+}
+
+#card{
+
+    width:360px;
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:0 0 15px rgba(0,0,0,0.15);
+
+    padding:35px;
+
+    text-align:center;
+
+}
+
+#english{
+
+    font-size:40px;
+
+    font-weight:bold;
+
+    color:#222;
+
+}
+
+#chinese{
+
+    margin-top:18px;
+
+    font-size:26px;
+
+    color:#666;
+
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<div id="card">
+
+    <div id="progress"></div>
+
+    <div id="questionType">
+        Loading...
+    </div>
+
+    <div id="question">
+        請稍候...
+    </div>
+
+    <input
+        id="answerInput"
+        type="text"
+        placeholder="請輸入答案"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false">
+
+    <div id="errorMessage"></div>
+
+    <br><br>
+
+    <div id="buttonArea">
+
+        <button id="prevButton">
+            ⬅ 上一題
+        </button>
+
+        <button id="nextButton">
+            送出
+        </button>
+
+        <button id="nextHistoryButton">
+            下一題 ➡
+        </button>
+
+        <button id="answerButton">
+            👁 顯示答案
+        </button>
+
+    </div>
+
+    <div id="answerArea"></div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
