@@ -3,9 +3,36 @@ console.log("Version 2");
 // Google Apps Script API
 //==============================
 
-const API_URL =
+const BASE_API_URL =
 "https://script.google.com/macros/s/AKfycbyeXobMFQRIVpFAWqullZAhVCEcpc_kSttb9hTgzmYkWsqeddRxycF5Ox0Qf0uAhP43/exec";
 
+//==============================
+// 取得網址 sheet 參數
+//==============================
+
+const params =
+    new URLSearchParams(window.location.search);
+
+const sheetName =
+    params.get("sheet");
+
+//==============================
+// 最終 API
+//==============================
+
+const API_URL =
+    sheetName
+
+    ?
+
+    `${BASE_API_URL}?sheet=${encodeURIComponent(sheetName)}`
+
+    :
+
+    BASE_API_URL;
+
+console.log("目前工作表：", sheetName || "綾");
+console.log("API：", API_URL);
 
 //==============================
 // 全域變數
