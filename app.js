@@ -156,11 +156,8 @@ answerVisible = false;
 
 function toggleAnswer(){
 
-    const answerArea =
-        document.getElementById("answerArea");
-
-    const button =
-        document.getElementById("answerButton");
+    const input =
+        document.getElementById("answerInput");
 
     const word =
         currentQuestion.word;
@@ -168,27 +165,29 @@ function toggleAnswer(){
     const mode =
         currentQuestion.mode;
 
-    let answer = "";
+    const answer =
 
-    if(mode === "EN_TO_ZH"){
+        mode==="EN_TO_ZH"
 
-        answer = word.zh;
+        ?
 
-    }
+        word.zh
 
-    else{
+        :
 
-        answer = word.en;
-
-    }
+        word.en;
 
     if(!answerVisible){
 
-        answerArea.innerHTML =
-            "<b>答案：</b><br>" + answer;
+        document
+        .getElementById("answerArea")
+        .innerHTML =
+        answer;
 
-        button.innerHTML =
-            "🙈 隱藏答案";
+        document
+        .getElementById("answerButton")
+        .innerHTML =
+        "🙈 隱藏答案";
 
         answerVisible = true;
 
@@ -196,14 +195,31 @@ function toggleAnswer(){
 
     else{
 
-        answerArea.innerHTML = "";
+        document
+        .getElementById("answerArea")
+        .innerHTML = "";
 
-        button.innerHTML =
-            "👁 顯示答案";
+        document
+        .getElementById("answerButton")
+        .innerHTML =
+        "👁 顯示答案";
 
         answerVisible = false;
 
     }
+
+    // 重新取得焦點
+    requestAnimationFrame(() => {
+
+        input.focus({
+            preventScroll:true
+        });
+
+        // 將游標移到文字最後
+        const len = input.value.length;
+        input.setSelectionRange(len, len);
+
+    });
 
 }
 
@@ -513,11 +529,25 @@ document
 
 });
 
-document
-.getElementById("answerButton")
-.addEventListener("click",function(){
+const answerButton =
+    document.getElementById("answerButton");
+
+answerButton.addEventListener("click", function () {
 
     toggleAnswer();
+
+    const input =
+        document.getElementById("answerInput");
+
+    requestAnimationFrame(() => {
+
+        input.focus({ preventScroll: true });
+
+        const len = input.value.length;
+
+        input.setSelectionRange(len, len);
+
+    });
 
 });
 
