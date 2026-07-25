@@ -467,6 +467,7 @@ async function loadWords(){
 
     try{
 
+        console.log("Fetch URL =", API_URL);
         const response =
             await fetch(API_URL);
 
