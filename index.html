@@ -210,50 +210,60 @@ body{
 
 <div id="card">
 
-    <div id="progress"></div>
+    <div id="topArea">
 
-    <div id="questionType">
-        Loading...
+        <div id="progress"></div>
+
+        <div id="questionType"></div>
+
+        <div id="question"></div>
+
     </div>
 
-    <div id="question">
-        請稍候...
+    <div id="middleArea">
+
+        <input
+            id="answerInput"
+            type="text"
+            placeholder="請輸入答案"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false">
+
+        <div id="errorMessage"></div>
+
+        <div id="answerArea"></div>
+
     </div>
-
-    <input
-        id="answerInput"
-        type="text"
-        placeholder="請輸入答案"
-        autocomplete="off"
-        autocorrect="off"
-        autocapitalize="off"
-        spellcheck="false">
-
-    <div id="errorMessage"></div>
-
-    <br><br>
 
     <div id="buttonArea">
 
         <button id="prevButton">
+
             ⬅ 上一題
+
         </button>
 
         <button id="nextButton">
+
             送出
+
         </button>
 
         <button id="nextHistoryButton">
+
             下一題 ➡
+
         </button>
 
         <button id="answerButton">
+
             👁 顯示答案
+
         </button>
 
     </div>
-
-    <div id="answerArea"></div>
 
 </div>
 
