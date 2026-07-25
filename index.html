@@ -41,13 +41,17 @@ href="icon.png">
 
 <style>
 
+*{
+    box-sizing:border-box;
+}
+
 body{
 
     margin:0;
 
-    background:#f5f5f5;
+    background:#f3f4f6;
 
-    font-family:Arial;
+    font-family:Arial,"Microsoft JhengHei",sans-serif;
 
     display:flex;
 
@@ -55,48 +59,149 @@ body{
 
     align-items:center;
 
-    height:100vh;
+    min-height:100vh;
+
+    padding:20px;
 
 }
 
 #card{
 
-    width:360px;
+    width:100%;
+
+    max-width:420px;
 
     background:white;
 
-    border-radius:18px;
+    border-radius:24px;
 
-    box-shadow:0 0 15px rgba(0,0,0,0.15);
+    padding:28px;
 
-    padding:35px;
-
-    text-align:center;
+    box-shadow:0 8px 30px rgba(0,0,0,.12);
 
 }
 
-#english{
+#progress{
 
-    font-size:40px;
+    font-size:15px;
+
+    color:#888;
+
+    margin-bottom:10px;
+
+}
+
+#questionType{
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#555;
+
+}
+
+#question{
+
+    margin-top:18px;
+
+    font-size:38px;
 
     font-weight:bold;
 
     color:#222;
 
+    word-break:break-word;
+
 }
 
-#chinese{
+#answerInput{
 
-    margin-top:18px;
+    width:100%;
 
-    font-size:26px;
+    margin-top:30px;
 
-    color:#666;
+    padding:14px;
+
+    font-size:28px;
+
+    text-align:center;
+
+    border-radius:12px;
+
+    border:2px solid #d0d0d0;
+
+}
+
+#answerInput:focus{
+
+    outline:none;
+
+    border-color:#4f8ef7;
+
+}
+
+#errorMessage{
+
+    color:red;
+
+    height:30px;
+
+    margin-top:10px;
+
+    font-size:20px;
+
+}
+
+#answerArea{
+
+    min-height:40px;
+
+    margin-top:15px;
+
+    color:#2563eb;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+}
+
+#buttonArea{
+
+    margin-top:30px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+}
+
+#buttonArea button{
+
+    padding:14px;
+
+    font-size:18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+#buttonArea button:active{
+
+    transform:scale(.97);
 
 }
 
 </style>
-
 
 
 </head>
