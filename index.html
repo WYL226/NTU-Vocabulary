@@ -43,161 +43,230 @@ href="icon.png">
 
 *{
     box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html{
+
+    height:100%;
+
+    overflow:hidden;
+
 }
 
 body{
 
     margin:0;
 
-    background:#f3f4f6;
+    width:100vw;
 
-    font-family:Arial,"Microsoft JhengHei",sans-serif;
+    height:100vh;
+    height:100dvh;
 
-    display:flex;
+    overflow:hidden;
 
-    justify-content:center;
+    background:#ffffff;
 
-    align-items:center;
-
-    min-height:100vh;
-
-    padding:20px;
+    font-family:
+        Arial,
+        "Microsoft JhengHei",
+        sans-serif;
 
 }
+
+/*========================*/
 
 #card{
 
     width:100%;
 
-    max-width:420px;
+    height:100%;
 
-    background:white;
+    height:100dvh;
 
-    border-radius:24px;
+    display:flex;
 
-    padding:28px;
+    flex-direction:column;
 
-    box-shadow:0 8px 30px rgba(0,0,0,.12);
+    padding:
 
-}
+        max(14px,env(safe-area-inset-top))
 
-#progress{
+        18px
 
-    font-size:15px;
+        max(18px,env(safe-area-inset-bottom))
 
-    color:#888;
-
-    margin-bottom:10px;
+        18px;
 
 }
 
-#questionType{
+/*========================*/
 
-    font-size:20px;
+#topArea{
 
-    font-weight:bold;
+    display:flex;
 
-    color:#555;
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:17px;
+
+    color:#666;
+
+    margin-bottom:18px;
 
 }
+
+/*========================*/
 
 #question{
 
-    margin-top:18px;
-
-    font-size:38px;
+    font-size:30px;
 
     font-weight:bold;
 
     color:#222;
 
-    word-break:break-word;
+    text-align:center;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    margin-bottom:28px;
 
 }
+
+/*========================*/
+
+#middleArea{
+
+    flex:1;
+
+}
+
+/*========================*/
 
 #answerInput{
 
     width:100%;
 
-    margin-top:30px;
+    height:54px;
 
-    padding:14px;
-
-    font-size:28px;
+    font-size:24px;
 
     text-align:center;
 
-    border-radius:12px;
+    border-radius:14px;
 
-    border:2px solid #d0d0d0;
+    border:2px solid #d7d7d7;
+
+    outline:none;
 
 }
 
 #answerInput:focus{
 
-    outline:none;
-
-    border-color:#888;
+    border-color:#7aa7ff;
 
 }
 
+/*========================*/
+
 #errorMessage{
-
-    color:red;
-
-    height:30px;
 
     margin-top:10px;
 
+    color:#d60000;
+
     font-size:20px;
+
+    text-align:center;
+
+    min-height:24px;
 
 }
 
 #answerArea{
 
-    min-height:40px;
+    margin-top:12px;
 
-    margin-top:15px;
+    color:#1d4ed8;
 
-    color:#2563eb;
+    font-size:21px;
 
-    font-size:24px;
+    text-align:center;
 
-    font-weight:bold;
+    min-height:28px;
 
 }
 
-#buttonArea{
+/*========================*/
 
-    margin-top:30px;
+#buttonArea{
 
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
-    gap:12px;
+    gap:10px;
+
+    margin-top:auto;
+
+    padding-top:18px;
 
 }
 
+/*========================*/
+
 #buttonArea button{
 
-    padding:14px;
-
-    font-size:18px;
+    height:48px;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:14px;
 
-    background:#2563eb;
+    background:#ececec;
 
-    color:white;
+    color:#222;
+
+    font-size:17px;
+
+    font-weight:600;
 
 }
 
 #buttonArea button:active{
 
     transform:scale(.97);
+
+}
+
+/*========================*/
+/* 鍵盤彈出 */
+/*========================*/
+
+@media (max-height:600px){
+
+    #question{
+
+        font-size:24px;
+
+        margin-bottom:16px;
+
+    }
+
+    #buttonArea button{
+
+        height:42px;
+
+        font-size:15px;
+
+    }
 
 }
 
